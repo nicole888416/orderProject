@@ -48,7 +48,7 @@
 | 項目 | 說明 |
 |------|------|
 | 開發工具 | Eclipse + WindowBuilder |
-| JDK | 17 |
+| JDK | 11 |
 | 技術 | Java Swing GUI |
 | 系統 | Windows 10 |
 
