@@ -1,5 +1,4 @@
-=======================model===================================
-
+===========================model===========================
 package com;
 
 public class Order {
@@ -54,12 +53,18 @@ public class Order {
 		return sum;
 	}
 	
+	public String show()
+	{
+		return "名字:"+name+
+				"\n吊燈數量: " + pendant +
+				"\n壁燈數量: " + walllamp +
+				"\n立燈數量: " + floorlamp +
+				"\n會員: " + (member ? "是" : "否");
+	}
 	
 
 }
-
-=====================event===================================
-
+============================event=====================================
 package com;
 
 import javax.swing.*;
@@ -330,12 +335,10 @@ public class OrderUI extends JFrame {
 		// ===== 確定按鈕 =====
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				output.setText("名字: " + name.getText() +
-						"\n吊燈數量: " + pendantCount +
-						"\n壁燈數量: " + walllampCount +
-						"\n立燈數量: " + floorlampCount +
-						"\n會員: " + (member.isSelected() ? "是" : "否"));
+				Order o=new Order(name.getText(),pendantCount,walllampCount,floorlampCount,member.isSelected());
+				output.setText(o.show());
 			}
 		});
 	}
 }
+
